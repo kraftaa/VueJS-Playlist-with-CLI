@@ -1,24 +1,25 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <p>{{ greeting() }}</p>
-
+    <ninjas></ninjas>
 
   </div>
 </template>
 
 <script>
+// locally nested component
+import Ninjas from './Ninjas.vue'
+
 export default {
+  components: {
+    'ninjas':Ninjas
+  },
   data () {
     return {
-      title: 'First Vue file'
-    }
-  },
-  methods: {
-    greeting: function(){
-      return 'hey';
+      title: 'Ninja App'
     }
   }
+
 }
 </script>
 
