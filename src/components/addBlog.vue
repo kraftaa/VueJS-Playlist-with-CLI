@@ -20,6 +20,7 @@
             <select v-model="blog.author">
                 <option v-for="author in authors">{{ author }}</option>
             </select>
+            <button v-on:click.prevent="post">Add Blog</button>
         </form>
         <div id="preview">
             <h3>Preview blog</h3>
@@ -50,6 +51,22 @@ export default {
         }
     },
     methods: {
+        post:function(){
+
+            // fetch('https://jsonplaceholder.typicode.com/posts')
+            // .then(response => response.json())
+            // .then(json => console.log(json))
+            // this.$http.post('https://jsonplaceholder.typicode.com/posts')
+            // for firebase we would change to firebase site
+            this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+                title: this.blog.title,
+                body:this.blog.content,
+                userId:1
+
+            }).then(function(data){
+                console.log(data);
+            });
+        }
     }
 }
 </script>
