@@ -1,4 +1,4 @@
-<template>
+template>
     <footer>
         <p>Copyright 2017 {{ title }}</p>
     </footer>
