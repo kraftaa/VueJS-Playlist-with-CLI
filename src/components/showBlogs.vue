@@ -31,8 +31,25 @@ export default {
                 return blog.title.match(this.search);
             });
         }
+    },
+    filters: {
+        'to-uppercase': function(value) {
+        // or toUppercase(value) {}
+            // body...
+            return value.toUpperCase();
+        }
+    },
+    directives: {
+        'rainbow':{
+            bind(el, binding,vnode){
+                el.style.color = "#" + Math.random().toString().slice(2,8)
+
+            }
+        }
     }
-}
+   }
+
+
 </script>
 
 <style>
